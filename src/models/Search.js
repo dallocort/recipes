@@ -7,8 +7,8 @@ export default class Search {
   }
   async getResults() {
     try {
-      // this.result = (await axios(`${proxy}/https://www.food2fork.com/api/search?key=${key}&q=${this.query}`)).data.recipes;
-      this.result = (await axios(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`)).data.recipes;
+
+      this.result = (await axios(`https://api.spoonacular.com/food/products/search?query=${this.query}&apiKey=${key}`)).data.recipes;
     } catch (err) {
       console.log(`ima neka greška koda axiosa ${err}`);
     }
